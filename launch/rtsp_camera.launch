@@ -1,0 +1,25 @@
+<launch>
+
+    <arg name="camera_name" default="rtsp_camera" />
+    <arg name="camera_frame" default="rtsp_camera_link" />
+    <arg name="image_raw_topic" default="image_raw" />
+    <arg name="camera_info_topic" default="camera_info" />
+
+    <!-- RTSP camera info -->
+    <arg name="hostname" doc="hostname or IP of the rtsp camera" />
+    <arg name="username" doc="username for the rtsp camera" />
+    <arg name="password" doc="password for the rtsp camera" />
+    <arg name="port" default="554" doc="port of the rtsp camera" />
+    <arg name="stream" doc="name of the video stream published by the rtsp camera" />
+
+    <group ns="$(arg camera_name)">
+        <node pkg="rtsp_ros_driver" type="rtsp_driver_node" name="rtsp_driver_node" output="screen">
+            <param name="rtsp_resource" value="rtsp://$(arg username):$(arg password)@$(arg hostname):$(arg port)/$(arg stream)" />
+            <param name="camera_name" value="$(arg camera_name)" />
+            <param name="camera_frame" value="$(arg camera_frame)" />
+            <param name="image_raw_topic" value="$(arg image_raw_topic)" />
+            <param name="camera_info_topic" value="$(arg camera_info_topic)" />
+        </node>
+    </group>
+
+</launch>
