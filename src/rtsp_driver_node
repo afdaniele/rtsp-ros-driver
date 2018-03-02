@@ -29,7 +29,10 @@ def camera_info_publisher_fcn(_):
         # publish camera calibration
         camera_info_msg = camera_info_manager.getCameraInfo()
         camera_info_msg.header.frame_id = camera_frame
-        camera_info_msg.header.stamp = rospy.Time.now()
+        
+        #TODO: leave timestamp as 0 to avoid sync problem in image_proc/resize
+        #camera_info_msg.header.stamp = rospy.Time.now()
+        
         camera_info_publisher.publish( camera_info_msg )
         # wait for 1 second
         sleep(wait_time)
@@ -96,13 +99,19 @@ if __name__ == '__main__':
         # convert CV image to ROS message
         image_msg = ros_cv_bridge.cv2_to_imgmsg(cv_image, encoding="bgr8")
         image_msg.header.frame_id = camera_frame
-        image_msg.header.stamp = rospy.Time.now()
+        
+        #TODO: leave timestamp as 0 to avoid sync problem in image_proc/resize
+        #image_msg.header.stamp = rospy.Time.now()
+        
         image_pub.publish( image_msg )
         # publish camera calibration in case of sync publisher
         if not async_info_publisher:
             camera_info_msg = camera_info_manager.getCameraInfo()
             camera_info_msg.header.frame_id = camera_frame
-            camera_info_msg.header.stamp = image_msg.header.stamp
+            
+            #TODO: leave timestamp as 0 to avoid sync problem in image_proc/resize
+            #camera_info_msg.header.stamp = image_msg.header.stamp
+            
             camera_info_publisher.publish( camera_info_msg )
         # compute frequency
         cur_t = time.time()
