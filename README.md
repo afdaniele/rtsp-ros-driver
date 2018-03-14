@@ -8,7 +8,7 @@ This ROS package contains a driver node that reads frames from an RTSP video str
 `rtsp_ros_driver` implements the ROS [camera_info_manager](http://wiki.ros.org/camera_info_manager_py) interface.
 This means that the driver node can seamlessly handle camera calibration files. `rtsp_ros_driver` stores camera
 calibration files in `$ROS_HOME/camera_info/` directory. Export the environment variable `$ROS_HOME` to point to
-your `catkin_ws` dir.
+your `catkin_ws` directory.
 
 ```
  export ROS_HOME=<path_to_your_catkin_ws>
