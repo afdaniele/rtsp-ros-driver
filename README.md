@@ -146,7 +146,7 @@ _/<camera\_name>/<camera\_info\_topic>_
 
 #### Mandatory parameters
 
-_rtsp\_resource_
+~_rtsp\_resource_
   &nbsp;&nbsp;
   (`string`)
 <br/>
@@ -157,7 +157,7 @@ _rtsp\_resource_
 
 #### Optional parameters
 
-_camera\_name_
+~_camera\_name_
   &nbsp;&nbsp;
   (`string`, default: _rtsp\_camera_)
 <br/>
@@ -165,7 +165,7 @@ _camera\_name_
     Namespace of the camera.
     <br/>
 
-_camera\_frame_
+~_camera\_frame_
   &nbsp;&nbsp;
   (`string`, default: _rtsp\_camera\_link_)
 <br/>
@@ -173,7 +173,7 @@ _camera\_frame_
     Name of the camera reference frame.
     <br/>
 
-_image\_raw\_topic_
+~_image\_raw\_topic_
   &nbsp;&nbsp;
   (`string`, default: _~image\_raw_)
 <br/>
@@ -181,7 +181,7 @@ _image\_raw\_topic_
     Name of the output image topic.
     <br/> 
 
-_camera\_info\_topic_
+~_camera\_info\_topic_
   &nbsp;&nbsp;
   (`string`, default: _~camera\_info_)
 <br/>
