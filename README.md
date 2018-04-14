@@ -27,7 +27,7 @@ roslaunch rtsp_ros_driver rtsp_camera.launch <arguments>
 # Launch files
 
 ## rtsp_camera.launch
-Launches the main node of the package (i.e., `rtsp_driver_node`). Unless the `rtsp_driver_node` node, this launch file allows us to specify hostname, username, password, and other parameters about the camera separately. These parameters will be combined into a standard URL format and sent to the `rtsp_driver_node` node.
+Launches the main node of the package (i.e., `rtsp_driver_node`). Unlike the `rtsp_driver_node` node, this launch file allows us to specify hostname, username, password, and other parameters about the camera separately. These parameters will be combined into a standard URL format and sent to the `rtsp_driver_node` node.
 
 ### Subscribed topics
 None.
