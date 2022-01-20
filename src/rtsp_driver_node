@@ -37,9 +37,9 @@ def camera_info_publisher_fcn(_):
 
 if __name__ == '__main__':
     # initialize ROS node
-    print "Initializing ROS node... ",
+    print("Initializing ROS node... ", end=' ')
     rospy.init_node('rtsp_camera_driver_node')
-    print "Done!"
+    print("Done!")
 
     # get ROS parameters
     resource = rospy.get_param('~rtsp_resource')
@@ -79,7 +79,7 @@ if __name__ == '__main__':
         camera_info_pub.start()
 
     # initialize variables
-    print "Correctly opened resource, starting to publish feed."
+    print("Correctly opened resource, starting to publish feed.")
     rval, cv_image = cap.read()
     last_t = time.time()
     last_print_t = time.time()
